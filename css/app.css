@@ -1,0 +1,300 @@
+/* love-nature — page styles (built on css/theme.css) */
+
+.garden-hero {
+  padding-block: clamp(2.5rem, 7vw, 5rem) clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.small-caption {
+  max-width: 44ch;
+  margin: 0.35rem auto 0.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ---------- garden grid ---------- */
+
+.garden-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.6rem;
+}
+
+.plot {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 240px;
+  padding: 1rem 0.9rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015));
+  overflow: hidden;
+}
+
+.plot.is-empty {
+  border-style: dashed;
+  justify-content: center;
+}
+
+.plot-soil {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 34px;
+  background: linear-gradient(180deg, rgba(122, 92, 74, 0.55), rgba(84, 60, 46, 0.75));
+}
+
+.plot-scene {
+  position: relative;
+  flex: 1 1 auto;
+  width: 100%;
+  display: grid;
+  place-items: end center;
+  z-index: 1;
+}
+
+.plot-info {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.plot-species {
+  display: block;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.plot-stage {
+  display: block;
+  color: var(--muted);
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.plot-verse {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--pink);
+  font-size: 0.78rem;
+  font-style: italic;
+}
+
+.plot-actions {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.7rem;
+}
+
+.plot-button {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.82rem;
+  padding: 0.4rem 0.85rem;
+  cursor: pointer;
+}
+
+.plot-button.is-primary {
+  background: linear-gradient(135deg, var(--pink), var(--purple));
+  border-color: transparent;
+  color: #fff;
+  font-weight: 600;
+}
+
+.plot-button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.plot-pull {
+  border: none;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.74rem;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0.4rem 0.2rem;
+}
+
+.plot.is-bloom {
+  border-color: var(--pink-strong);
+  background: linear-gradient(180deg, rgba(255, 182, 216, 0.14), rgba(255, 255, 255, 0.02));
+}
+
+/* ---------- the drawn plant ---------- */
+
+.seed {
+  position: relative;
+  z-index: 1;
+  width: 26px;
+  height: 16px;
+  border-radius: 50% 50% 45% 45%;
+  background: radial-gradient(circle at 40% 30%, #b08a6a, #7a5a44);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.plant {
+  position: relative;
+  z-index: 1;
+  transform-origin: 50% 100%;
+  transform: scale(var(--scale, 1));
+  transition: transform 0.4s ease;
+}
+
+.stem {
+  width: 5px;
+  height: 96px;
+  margin: 0 auto;
+  border-radius: 3px;
+  background: linear-gradient(180deg, #86d18a, #3f8f4c);
+}
+
+.leaf {
+  position: absolute;
+  bottom: 34px;
+  left: 50%;
+  width: 34px;
+  height: 20px;
+  border-radius: 0 100% 0 100%;
+  background: linear-gradient(135deg, #9be09e, #4f9f5b);
+  transform-origin: 0 100%;
+}
+
+.leaf.is-left {
+  transform: rotate(28deg);
+}
+
+.leaf.is-right {
+  transform: rotate(152deg) scaleX(-1);
+  bottom: 54px;
+}
+
+.flower {
+  position: absolute;
+  left: 50%;
+  bottom: 96px;
+  width: 0;
+  height: 0;
+}
+
+.petal {
+  position: absolute;
+  left: -11px;
+  top: -17px;
+  width: 22px;
+  height: 34px;
+  border-radius: 50% 50% 46% 46% / 62% 62% 40% 40%;
+  background: radial-gradient(circle at 50% 26%, #ffffff, #f3ecff 70%, #efe2ff);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.6) inset, 0 1px 3px rgba(120, 90, 160, 0.25);
+  transform: rotate(calc(var(--i) * (360deg / var(--petals)))) translateY(-15px);
+}
+
+.core {
+  position: absolute;
+  left: -7px;
+  top: -7px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, hsl(var(--hue) 90% 78%), hsl(var(--hue) 80% 58%));
+  box-shadow: 0 0 6px hsla(var(--hue) 80% 60% / 0.7);
+}
+
+.plot.stage-1 .plant { --scale: 0.45; }
+.plot.stage-2 .plant { --scale: 0.72; }
+.plot.stage-3 .plant { --scale: 1; }
+.plot.stage-2 .petal,
+.plot.stage-1 .petal { transform: rotate(calc(var(--i) * (360deg / var(--petals)))) translateY(-6px) scaleY(0.5); }
+
+/* ---------- meadow strip ---------- */
+
+.meadow {
+  position: relative;
+  height: 70px;
+  margin-top: 1.8rem;
+  border-radius: 0 0 20px 20px;
+  background: linear-gradient(180deg, rgba(120, 200, 140, 0.12), rgba(80, 150, 100, 0.22));
+  overflow: hidden;
+}
+
+.meadow-stem {
+  position: absolute;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(140, 210, 150, 0.9), rgba(70, 140, 90, 0.9));
+}
+
+.meadow-bloom {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 45% 40%, #fff, #f4ecff);
+  box-shadow: 0 0 4px rgba(255, 182, 216, 0.6);
+}
+
+/* ---------- how it grows ---------- */
+
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.6rem 0 1.4rem;
+}
+
+.how-card {
+  padding: 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--panel);
+}
+
+.how-mark {
+  display: block;
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+  color: var(--pink);
+}
+
+.how-card h3 {
+  margin: 0 0 0.4rem;
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+.how-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 780px) {
+  .garden-grid,
+  .how-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .garden-grid,
+  .how-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plant {
+    transition: none;
+  }
+}
