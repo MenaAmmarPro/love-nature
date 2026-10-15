@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b20">
+  <meta name="description" content="Our Garden — a quiet, code-drawn garden the two of us grow together, one watering at a time. Kept just for Mena.">
+  <title>Our Garden ✦ Love for Mena</title>
+  <link rel="canonical" href="https://menaammarpro.github.io/love-nature/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Our Garden — for Mena">
+  <meta property="og:title" content="Our Garden ✦ Love for Mena">
+  <meta property="og:description" content="A quiet, code-drawn garden we grow together — plant a seed, water it, watch it bloom.">
+  <meta property="og:url" content="https://menaammarpro.github.io/love-nature/">
+  <meta property="og:image" content="https://menaammarpro.github.io/love-nature/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Our Garden — plant a seed, watch it bloom">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Our Garden ✦ Love for Mena">
+  <meta name="twitter:description" content="A quiet, code-drawn garden we grow together.">
+  <meta name="twitter:image" content="https://menaammarpro.github.io/love-nature/assets/og-image.png">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="js/theme-main.js" defer></script>
+  <script src="js/effects.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Our Garden">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="brand" href="index.html">❀ Our Garden</a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">Menu</button>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="active" href="index.html">Home</a>
+      <a href="#garden">The garden</a>
+      <a href="#how">How it grows</a>
+      <a href="#details">Details</a>
+      <a href="https://menaammarpro.github.io/loveformymena/">Our little universe ↗</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle color theme">Theme</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero garden-hero">
+      <p class="eyebrow">SOMETHING THAT GROWS</p>
+      <div class="moon" aria-hidden="true">❀</div>
+      <p class="small-caption">A garden with no rules, only patience.</p>
+      <h1>Our <span>garden.</span></h1>
+      <p class="hero-description">
+        Plant a seed and come back through the days to water it. Nothing here
+        needs to be perfect — it only needs to be tended. Little by little,
+        it becomes a whole meadow of us.
+      </p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#garden">Go to the garden <span>❀</span></a>
+        <a class="button button-ghost" href="#how">How it grows</a>
+      </div>
+      <p class="signature">Made with love, just for you <span>♥</span></p>
+    </section>
+
+    <section class="section" id="garden">
+      <p class="eyebrow">SIX LITTLE PLOTS</p>
+      <h2>The <span>garden.</span></h2>
+      <p class="section-copy">Plant a seed, water it once a day, and let it find its way to bloom.</p>
+      <div class="garden-grid" id="garden-grid"></div>
+      <p class="section-note" id="garden-note" aria-live="polite"></p>
+      <div class="meadow" id="meadow" aria-hidden="true"></div>
+    </section>
+
+    <section class="section" id="how">
+      <p class="eyebrow">GENTLY</p>
+      <h2>How it <span>grows.</span></h2>
+      <div class="how-grid">
+        <div class="how-card">
+          <span class="how-mark" aria-hidden="true">✦</span>
+          <h3>Plant</h3>
+          <p>Every plot starts empty. Tap it to plant a seed — each one is a little different.</p>
+        </div>
+        <div class="how-card">
+          <span class="how-mark" aria-hidden="true">❀</span>
+          <h3>Water</h3>
+          <p>Come back on different days to water it. A seed becomes a sprout, then a bud, then a flower.</p>
+        </div>
+        <div class="how-card">
+          <span class="how-mark" aria-hidden="true">♥</span>
+          <h3>Bloom</h3>
+          <p>Three days of care and it blooms into its own white-petalled flower. Pull one any time to begin again.</p>
+        </div>
+      </div>
+      <p class="section-copy">Everything lives on this device only — this garden belongs to the two of you.</p>
+    </section>
+
+    <section class="section" id="details">
+      <p class="eyebrow">JUST FOR US</p>
+      <h2>Details.</h2>
+      <div class="settings-actions">
+        <button class="button button-primary" id="replant-all" type="button">Plant every empty plot</button>
+        <button class="button button-ghost" id="share-button" type="button">Share this page</button>
+        <button class="button button-ghost" id="reset-garden" type="button">Clear the whole garden</button>
+      </div>
+      <p class="settings-note" id="save-note" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with care <span>♥</span> for Mena</p>
+    <p class="footer-small">A little universe of its own ✦</p>
+  </footer>
+</body>
+</html>
